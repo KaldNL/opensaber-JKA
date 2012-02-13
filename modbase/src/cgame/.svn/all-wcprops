@@ -1,0 +1,281 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/14/trunk/modbase/src/cgame
+END
+fx_heavyrepeater.c
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_heavyrepeater.c
+END
+animtable.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/modbase/src/cgame/animtable.h
+END
+cg_strap.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_strap.c
+END
+cg_predict.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_predict.c
+END
+cg_playerstate.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_playerstate.c
+END
+fx_rocketlauncher.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_rocketlauncher.c
+END
+fx_bryarpistol.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_bryarpistol.c
+END
+cg_snapshot.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_snapshot.c
+END
+cg_local.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_local.h
+END
+cg_lights.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_lights.h
+END
+JK2_cgame2005.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/14/trunk/modbase/src/cgame/JK2_cgame2005.vcproj
+END
+cg_newDraw.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_newDraw.c
+END
+cg_weapons.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_weapons.c
+END
+cg_marks.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_marks.c
+END
+cg_drawtools.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_drawtools.c
+END
+cg_players.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_players.c
+END
+fx_disruptor.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_disruptor.c
+END
+fx_blaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_blaster.c
+END
+cg_event.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_event.c
+END
+cg_localents.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_localents.c
+END
+cg_turret.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_turret.c
+END
+JK2_cgame.def
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/modbase/src/cgame/JK2_cgame.def
+END
+fx_flechette.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_flechette.c
+END
+JK2_cgame.vcproj
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/modbase/src/cgame/JK2_cgame.vcproj
+END
+JK2_cgame.vcproj.vspscc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/modbase/src/cgame/JK2_cgame.vcproj.vspscc
+END
+cg_info.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_info.c
+END
+fx_demp2.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_demp2.c
+END
+cg_draw.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_draw.c
+END
+cg_syscalls.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_syscalls.c
+END
+JK2_cgame2005.vcproj.vspscc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/12/trunk/modbase/src/cgame/JK2_cgame2005.vcproj.vspscc
+END
+tr_types.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/tr_types.h
+END
+cg_light.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_light.c
+END
+cg_consolecmds.c
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_consolecmds.c
+END
+cg_ents.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_ents.c
+END
+cg_view.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_view.c
+END
+holocronicons.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/modbase/src/cgame/holocronicons.h
+END
+cg_saga.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_saga.c
+END
+fx_bowcaster.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_bowcaster.c
+END
+cg_weaponinit.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_weaponinit.c
+END
+cg_servercmds.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_servercmds.c
+END
+cg_effects.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_effects.c
+END
+fx_force.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_force.c
+END
+fx_local.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/!svn/ver/2/trunk/modbase/src/cgame/fx_local.h
+END
+cg_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_public.h
+END
+cg_scoreboard.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_scoreboard.c
+END
+cg_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/!svn/ver/2/trunk/modbase/src/cgame/cg_main.c
+END

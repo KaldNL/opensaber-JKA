@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon
+END
+qcommon.h
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/qcommon.h
+END
+disablewarnings.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/disablewarnings.h
+END
+cm_public.h
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/cm_public.h
+END
+game_version.h
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/game_version.h
+END
+tags.h
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/tags.h
+END
+qfiles.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/2/trunk/modbase/src/shared/qcommon/qfiles.h
+END
