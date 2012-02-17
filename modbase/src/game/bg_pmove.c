@@ -2300,8 +2300,8 @@ static qboolean PM_CheckJump( void )
 							pm->ps->velocity[0] = pm->ps->velocity[1] = 0;
 							VectorMA( pm->ps->velocity, -150, fwd, pm->ps->velocity );
 						}
-
-						/*
+						  //startcomment kaldor
+						
 						if ( doTrace && anim != BOTH_WALL_RUN_LEFT && anim != BOTH_WALL_RUN_RIGHT )
 						{
 							if (trace.entityNum < MAX_CLIENTS)
@@ -2309,8 +2309,8 @@ static qboolean PM_CheckJump( void )
 								pm->ps->forceKickFlip = trace.entityNum+1; //let the server know that this person gets kicked by this client
 							}
 						}
-						*/
-
+						
+						  //endcomment kaldor
 						//up
 						if ( vertPush )
 						{
@@ -3613,7 +3613,7 @@ static int PM_TryRoll( void )
 		}
 	}
 
-	if (//(pm->ps->weapon != WP_SABER && pm->ps->weapon != WP_MELEE) ||
+	if ((pm->ps->weapon != WP_SABER && pm->ps->weapon != WP_MELEE) ||
 		PM_IsRocketTrooper() ||
 		BG_HasYsalamiri(pm->gametype, pm->ps) ||
 		!BG_CanUseFPNow(pm->gametype, pm->ps, pm->cmd.serverTime, FP_LEVITATION))

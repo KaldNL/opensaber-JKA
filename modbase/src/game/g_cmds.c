@@ -3101,6 +3101,8 @@ qboolean TryGrapple(gentity_t *ent)
 			ent->client->ps.legsTimer = ent->client->ps.torsoTimer;
 		}
 		ent->client->ps.weaponTime = ent->client->ps.torsoTimer;
+
+
 		return qtrue;
 	}
 
@@ -3186,6 +3188,18 @@ void ClientCommand( int clientNum ) {
 	  return;
         }
 
+	/*
+	//kaldor - For T3's Classes
+	if (Q_stricmp (cmd, "t3classes") == 0) {
+	  trap_SendServerCommand( ent-g_entities, va("print \"-----Terminative 3 Class Schedule-----\n\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"^1Friday: Basic Works(19:00), Advanced Basics(20:30)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"^2Saturday: Basic Works(19:00), Expert Works 1(20:30)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"^3Sunday: Advanced Basics(19:00), Expert Works 2(21:30)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"All times are in GMT. Use /date command for server time.\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"Please be on Mumble and IRC 5 minutes early.\n\""));
+	  return;
+        }
+	*/
 	
 	//Kaldor - I am an idiot with C, so thanks be to azns. Attempting to make a /date command which will inform the user about how much of a life they have.
 	//seems to crash when compiling on Windows. Fixme.
@@ -3217,26 +3231,18 @@ void ClientCommand( int clientNum ) {
 	return;
 	}
 
+	
 	//kaldor - about saber tweaks
 	if (Q_stricmp (cmd, "about_sabersystem") == 0) {
-
-trap_SendServerCommand( ent-g_entities, va("print \"^5The reasoning behind this is not the typical reasons. Some mods removed the ability to 'poke' because\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5'it's cheating'. Some mods changed the system because 'it's not jedi-like'. My reason for changing\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5the saber system is to encourage JKA players to think more heavily and reduce the spam ability. This\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5is from a gaming point of view, not a Jedi/Role Play/Honour point of view. If the mod works out\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5properly, it could possibly greatly improve the way we play and promote more advanced gameplay.\n\nThe\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5saber system only tweaks the timing, blocking, and parry rates. Everything is the same, but with new\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5handicaps/advantages possible. For example, if someone rushes forward wiggling heavily we can\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5now simply parry them down and likely one-shot them. This should help deter spam and promote actual\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5thinking.\n\nThis is a mod for gamers. This is NOT a mod for jedi-wannabes, typical ego players, or\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5'social' servers. It's a mod for people who actually want to properly learn to play the game without\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5relying on tricks and habits. Most of the 'pro' or 'advanced' JKA players simply rely\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5on tricks. They don't know, in detail, why it works; all they know is that it DOES work, and often only\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5because the other player does not know how to counter it. Frags and scores aren't indicative of true\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5skill.\n\nSome basejka TFFA players will probably scoff at this, but to them I say have fun running\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5into each other and gloating about your tricks. Don't let the crouch parries hit your ass on the way\n\""));
-trap_SendServerCommand( ent-g_entities, va("print \"^5out.\n\n\""));	
-
+	  trap_SendServerCommand( ent-g_entities, va("print \"This mod improves the hit detection and alters the saber traces. Additionally, the first part of a swing\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"will now do damage. This allows the beginning of the swing to be blocked/parried. Because of this new\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"early-block system, saber spam or heavy exploits will be less effective. A player can 'deny' an enemy who\n\""));   
+	  trap_SendServerCommand( ent-g_entities, va("print \"wildly swings their saber (fans, aggressive wiggle) and will force them to make cleaner, more precise hits.\n\""));
+  	  trap_SendServerCommand( ent-g_entities, va("print \"To make up for the beginning of the swing's shortcomings, I added a 50 percent increase to end-phase damage.\n\""));
+  	  trap_SendServerCommand( ent-g_entities, va("print \"More damage at the end of the swing should maintain the fast-paced feel of JKA. Well-timed and well-aimed\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"slashes are more effective than on basejka.\n\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"This could potentially improve the way we play saber-only JKA quite a lot. Less spam-friendly, and more accurate\n\""));	
+	  trap_SendServerCommand( ent-g_entities, va("print \"hit detection could make the game more fast-paced and controlled.\n\""));       
 	return;
 	}
 	//Kaldor  - Verbose output for the manual command.
@@ -3247,13 +3253,17 @@ trap_SendServerCommand( ent-g_entities, va("print \"^5out.\n\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"about_sabersystem: Explains the reason behind the new saber system\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"readlicense: Display brief summary of the mod's license\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"contactinfo: Contact info for the developer(s)\n\""));
-		trap_SendServerCommand( ent-g_entities, va("print \"date: Show what time it is in the server's location.\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"date: Show what time it is in the server's location\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"credits: Who did what for opensaber\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"^1--Server Commands--\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_SingleSaberOnly: Kick dual/staff users :)\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberSPStyleDamage: Alter the saber system. 1 = Regular basejka, 0 = Touch damage and higher blocking with lower damage\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberInterpolate: Lowers the damage and makes blocking more accurate. Warning; it causes ghosting\n\""));
-		trap_SendServerCommand( ent-g_entities, va("print \"To Be Completed ASAP\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_allowBlackNames: Enable/disable the use of ^0black names\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_allowMultipleDuels: Enable/disable the ability to have more than one duel at a timen\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_duelHealthRestore: Enable/disable HP reset for dueling in FFA\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_duelShieldRestoreLevel: The amount of armour that is given in a duel\n\""));
+		
 
 		return;
 	}

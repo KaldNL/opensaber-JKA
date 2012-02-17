@@ -6,7 +6,8 @@
 # === Variables ===
 
 # Compiler - GCC
-CC = gcc
+#Verified to work with llvm-gcc and clang also.
+CC = llvm-gcc
 
 # Compiler Flags
 # -D<name> ( Used to make a define like #define mydefine )

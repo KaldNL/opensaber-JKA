@@ -2943,7 +2943,7 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 {
 	if ( !ent || !ent->client || saberNum >= MAX_SABERS )
 	{
-		return FORCE_LEVEL_3; //kaldor - default 0.
+		return FORCE_LEVEL_3; //kaldor - default 0. This is one of the things that make opensaber mod more balanced. Basejka players tend to turn their back toward the opponent to avoid blocks, resulting in a high-damage wiggle. Enabling this part of the swing to block prevents this. Players can simply "Catch" the blade before the swing. 
 	}
 	else
 	{
@@ -4046,7 +4046,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				gentity_t *saberEnt = &g_entities[self->client->ps.saberEntityNum];
 				if ( !saberEnt 
 					|| !saberEnt->s.saberInFlight )
-				{//does less damage on the way back //kaldor - retreating phase?
+				{//does less damage on the way back //kaldor - this seems to affect damage of the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
 					fDmg = 1.5f; //kaldor - changing for testing. default 1.0f.
 					attackStr = FORCE_LEVEL_1; //default 0
 				}
@@ -4193,7 +4193,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 						{
 							//dmg = 50; //kaldor reducing from 90
 							//ramp from 2 to 90 by default for other specials
-							dmg = G_GetAttackDamage(self, 2, 90, 0.5f);
+							dmg = G_GetAttackDamage(self, 2, 50, 0.5f);
 						}
 					}
 				}
