@@ -14,7 +14,7 @@ CC = llvm-gcc
 # -w ( disable warnings )
 # -I<include path>  used to include headers
 # -fPIC ( this flag is necessary to build shared libraries )
-CFLAGS = -I../qcommon -I../server -I../icarus -I../ghoul2 -fPIC -DFINAL_BUILD -DMISSION_PACK -DQAGAME -D_JK2 -D__linux__ -D__GCC__ -w -O2
+CFLAGS = -I../qcommon -I../server -I../icarus -I../ghoul2 -fPIC -DFINAL_BUILD -DMISSION_PACK -DQAGAME -D_JK2 -D__linux__ -D__GCC__ -w -O3
 
 # Target file
 TARGET = ../../baseAAA/jampgamei386.so

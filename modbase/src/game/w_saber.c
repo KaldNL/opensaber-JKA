@@ -106,11 +106,11 @@ static GAME_INLINE int G_SaberAttackPower(gentity_t *ent, qboolean attacking)
 	//Give "medium" strength for the two special stances.
 	if (baseLevel == SS_DUAL)
 	{
-		baseLevel = 2;
+		baseLevel = 1;
 	}
 	else if (baseLevel == SS_STAFF)
 	{
-		baseLevel = 2;
+		baseLevel = 1;
 	}
 
 	if (attacking)
@@ -3851,9 +3851,14 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 	{
 		if ( d_saberSPStyleDamage.integer )
 		{//SP-size saber damage traces
+		  //kaldor - gonna try reducing for tests. 
+		  /*
 			VectorSet(saberTrMins, -2, -2, -2 );
 			VectorSet(saberTrMaxs, 2, 2, 2 );
-		}
+		  */
+		  VectorSet(saberTrMins, -2, -2, -2 );                                                                                                                                                                                                             
+		  VectorSet(saberTrMaxs, 2, 2, 2 );    
+		  }
 		else
 		{
 			VectorSet(saberTrMins, -saberBoxSize*3, -saberBoxSize*3, -saberBoxSize*3);
@@ -4113,12 +4118,13 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				}
 			}
 			*/
-			if ( g_gametype.integer != GT_DUEL
-				&& g_gametype.integer != GT_POWERDUEL
-				&& g_gametype.integer != GT_SIEGE )
+			//kaldor - making duel gametype have normal damage (like FFA and TFFA)
+			if (g_gametype.integer != GT_POWERDUEL
+			  && g_gametype.integer != GT_SIEGE )
 			{//in faster-paced games, sabers do more damage
 				fDmg *= 2.0f;
 			}
+
 			if ( fDmg )
 			{//the longer the trace, the more damage it does
 				//FIXME: in SP, we only use the part of the trace that's actually *inside* the hit ent...

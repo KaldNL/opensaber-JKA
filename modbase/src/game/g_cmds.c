@@ -3172,7 +3172,7 @@ void ClientCommand( int clientNum ) {
 
 	//kaldor - this uname command is intended to give server users information on the computer opensaber was compiled on. Saber gameplay seems altered across different servers, OS's, and compilers. Change this to put in info on your system.
 	if (Q_stricmp (cmd, "uname") == 0) {
-		trap_SendServerCommand( ent-g_entities, va("print \"opensaber version 12.03 (Alpha Build). Compiled with GCC 4.6.2 on Ubuntu 12.04 LTS. Date: February 13, 2012\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"opensaber version 12.03 (Pre-release). Compiled with llvm-gcc on Ubuntu 12.04 LTS. Date: February 18, 2012\n\""));
 		return;
 	}
 
