@@ -2727,6 +2727,7 @@ void charge_stick (gentity_t *self, gentity_t *other, trace_t *trace)
 
 	//if we get here I guess we hit hte world so we can stick to it
 
+        // sil - det packs failed to detonate, not anymore :o
         if (self->think == G_RunObject){
 		self->touch = 0;
 		self->think = DetPackBlow;
