@@ -3808,6 +3808,9 @@ void ClientSpawn(gentity_t *ent) {
 
 	// clear entity state values
 	BG_PlayerStateToEntityState( &client->ps, &ent->s, qtrue );
+	
+	// sil - ghost bug fix
+	ent->s.number = index;
 
 	//rww - make sure client has a valid icarus instance
 	trap_ICARUS_FreeEnt( ent );
