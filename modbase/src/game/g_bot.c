@@ -287,7 +287,7 @@ const char *G_RefreshNextMap(int gametype, qboolean forced)
 G_LoadArenas
 ===============
 */
-static void G_LoadArenas( void ) {
+void G_LoadArenas( void ) {
 	int			numdirs;
 	char		filename[128];
 	char		dirlist[1024];
