@@ -725,11 +725,21 @@ void Team_DroppedFlagThink(gentity_t *ent) {
 Team_DroppedFlagThink
 ==============
 */
+static vec3_t	minFlagRange = { 50, 36, 36 };
+static vec3_t	maxFlagRange = { 44, 36, 36 };
+
+int Team_TouchEnemyFlag( gentity_t *ent, gentity_t *other, int team );
+
 int Team_TouchOurFlag( gentity_t *ent, gentity_t *other, int team ) {
 	int			i;
 	gentity_t	*player;
 	gclient_t	*cl = other->client;
 	int			enemy_flag;
+	vec3_t		mins, maxs;
+	int num, j, enemyTeam;
+	int	touch[MAX_GENTITIES];
+	gentity_t*	enemy;
+	float enemyDist, dist;
 
 	if (cl->sess.sessionTeam == TEAM_RED) {
 		enemy_flag = PW_BLUEFLAG;
@@ -755,6 +765,49 @@ int Team_TouchOurFlag( gentity_t *ent, gentity_t *other, int team ) {
 	// flag, he's just won!
 	if (!cl->ps.powerups[enemy_flag])
 		return 0; // We don't have the flag
+		
+	VectorSubtract( ent->s.pos.trBase, minFlagRange, mins );
+	VectorAdd( ent->s.pos.trBase, maxFlagRange, maxs );
+
+	num = trap_EntitiesInBox( mins, maxs, touch, MAX_GENTITIES );
+
+	dist = Distance(ent->s.pos.trBase, other->client->ps.origin);
+		
+	if (other->client->sess.sessionTeam == TEAM_RED){
+		enemyTeam = TEAM_BLUE;
+	} else {
+		enemyTeam = TEAM_RED;
+	}	
+
+	for ( j=0 ; j<num ; j++ ) {
+		enemy = (g_entities + touch[j]);
+
+		if (!enemy || !enemy->inuse || !enemy->client){
+			continue;
+		}
+
+		//check if its alive
+		if (enemy->health < 1)
+			continue;		// dead people can't pickup
+
+		//ignore specs
+		if (enemy->client->sess.sessionTeam == TEAM_SPECTATOR)
+			continue;
+
+		//check if this is enemy
+		if ((enemy->client->sess.sessionTeam != TEAM_RED && enemy->client->sess.sessionTeam != TEAM_BLUE) ||
+			enemy->client->sess.sessionTeam != enemyTeam){
+			continue;
+		}
+			
+		//check if enemy is closer to our flag than us
+		enemyDist = Distance(ent->s.pos.trBase,enemy->client->ps.origin);
+		if (enemyDist < dist){
+			return Team_TouchEnemyFlag( ent, enemy, team );
+		}
+	}	
+		
+		
 	//PrintMsg( NULL, "%s" S_COLOR_WHITE " captured the %s flag!\n", cl->pers.netname, TeamName(OtherTeam(team)));
 	PrintCTFMessage(other->s.number, team, CTFMESSAGE_PLAYER_CAPTURED_FLAG);
 
@@ -817,6 +870,50 @@ int Team_TouchOurFlag( gentity_t *ent, gentity_t *other, int team ) {
 
 int Team_TouchEnemyFlag( gentity_t *ent, gentity_t *other, int team ) {
 	gclient_t *cl = other->client;
+	vec3_t		mins, maxs;
+	int num, j, ourFlag;
+	int	touch[MAX_GENTITIES];
+	gentity_t*	enemy;
+	float enemyDist, dist;
+	
+	VectorSubtract( ent->s.pos.trBase, minFlagRange, mins );
+	VectorAdd( ent->s.pos.trBase, maxFlagRange, maxs );
+
+	num = trap_EntitiesInBox( mins, maxs, touch, MAX_GENTITIES );
+
+	dist = Distance(ent->s.pos.trBase, other->client->ps.origin);
+
+	if (other->client->sess.sessionTeam == TEAM_RED){
+		ourFlag   = PW_REDFLAG;
+	} else {
+		ourFlag   = PW_BLUEFLAG;
+	}		
+
+	for(j = 0; j < num; ++j){
+		enemy = (g_entities + touch[j]);
+
+		if (!enemy || !enemy->inuse || !enemy->client){
+			continue;
+		}
+
+		//ignore specs
+		if (enemy->client->sess.sessionTeam == TEAM_SPECTATOR)
+			continue;
+
+		//check if its alive
+		if (enemy->health < 1)
+			continue;		// dead people can't pick up items
+
+		//lets check if he has our flag
+		if (!enemy->client->ps.powerups[ourFlag])
+			continue;
+
+		//check if enemy is closer to our flag than us
+		enemyDist = Distance(ent->s.pos.trBase,enemy->client->ps.origin);
+		if (enemyDist < dist){
+			return Team_TouchOurFlag( ent, enemy, team );
+		}
+	}	
 
 	//PrintMsg (NULL, "%s" S_COLOR_WHITE " got the %s flag!\n",
 	//	other->client->pers.netname, TeamName(team));
