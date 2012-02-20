@@ -3137,10 +3137,17 @@ void ForceThrow( gentity_t *self, qboolean pull )
 		powerUse = FP_PUSH;
 	}
 
+	// sil - locking homing missile bug fix
 	if ( !WP_ForcePowerUsable( self, powerUse ) )
 	{
 		return;
 	}
+	
+	if (self->client->ps.rocketLockIndex != ENTITYNUM_NONE){
+		self->client->ps.rocketLockIndex = ENTITYNUM_NONE;
+		self->client->ps.rocketLockTime = 0;
+		self->client->ps.rocketTargetTime = 0;	  
+	}	
 
 	if (!pull && self->client->ps.saberLockTime > level.time && self->client->ps.saberLockFrame)
 	{
