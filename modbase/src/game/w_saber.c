@@ -35,7 +35,13 @@ void WP_SaberAddG2Model( gentity_t *saberent, const char *saberModel, qhandle_t 
 void WP_SaberRemoveG2Model( gentity_t *saberent );
 
 float RandFloat(float min, float max) {
-	return ((rand() * (max - min)) / 32768.0F) + min;
+// sil - bugging for identical behaviour on windows
+// (might need tweaking for different compilers)
+	int random = rand();
+#ifndef __GCC__
+	random = (random << 16) | random; 
+#endif	
+	return ((random * (max - min)) / 32768.0F) + min;
 }
 
 #ifdef DEBUG_SABER_BOX
