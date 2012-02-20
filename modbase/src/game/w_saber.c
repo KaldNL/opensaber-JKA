@@ -34,8 +34,13 @@ qboolean WP_SaberBladeDoTransitionDamage( saberInfo_t *saber, int bladeNum );
 void WP_SaberAddG2Model( gentity_t *saberent, const char *saberModel, qhandle_t saberSkin );
 void WP_SaberRemoveG2Model( gentity_t *saberent );
 
+// sil - "fix" for identical behaviour on windows
 float RandFloat(float min, float max) {
-	return ((rand() * (max - min)) / 32768.0F) + min;
+	int random = rand();
+#if RAND_MAX < 2147483647
+	random = (random << 16) | random; 
+#endif
+	return ((random * (max - min)) / 32768.0F) + min; 
 }
 
 #ifdef DEBUG_SABER_BOX
