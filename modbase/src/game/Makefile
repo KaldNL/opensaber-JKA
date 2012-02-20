@@ -5,8 +5,9 @@
 
 # === Variables ===
 
-# Compiler - GCC
-#Verified to work with llvm-gcc and clang also.
+# Compiler
+#Personally, I prefer llvm-gcc. It seems to improve the hit detection slightly. However, it may not work on older distros. change to "CC = gcc" for fool-proof compiling.
+#Verified to work with llvm-gcc and clang also. However, it seems that clang produces a Sysdll error.
 CC = llvm-gcc
 
 # Compiler Flags
@@ -14,7 +15,7 @@ CC = llvm-gcc
 # -w ( disable warnings )
 # -I<include path>  used to include headers
 # -fPIC ( this flag is necessary to build shared libraries )
-CFLAGS = -I../qcommon -I../server -I../icarus -I../ghoul2 -fPIC -DFINAL_BUILD -DMISSION_PACK -DQAGAME -D_JK2 -D__linux__ -D__GCC__ -w -O3
+CFLAGS = -I../qcommon -I../server -I../icarus -I../ghoul2 -fPIC -DFINAL_BUILD -DMISSION_PACK -DQAGAME -D_JK2 -D__GCC__ -w -O3
 
 # Target file
 TARGET = ../../baseAAA/jampgamei386.so
