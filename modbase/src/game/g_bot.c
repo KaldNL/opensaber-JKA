@@ -1297,7 +1297,7 @@ G_InitBots
 */
 void G_InitBots( qboolean restart ) {
 	G_LoadBots();
-	G_LoadArenas();
+	//G_LoadArenas(); // sil - moved map loading out
 
 	trap_Cvar_Register( &bot_minplayers, "bot_minplayers", "0", CVAR_SERVERINFO );
 
