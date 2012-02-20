@@ -1059,6 +1059,8 @@ void G_InitGame( int levelTime, int randomSeed, int restart ) {
 		G_SoundIndex( "sound/player/gurp1.wav" );
 		G_SoundIndex( "sound/player/gurp2.wav" );
 	}
+	
+	G_LoadArenas(); // sil - fix for map voting with bot_enable 0
 
 	if ( trap_Cvar_VariableIntegerValue( "bot_enable" ) ) {
 		BotAISetup( restart );
