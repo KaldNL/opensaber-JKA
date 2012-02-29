@@ -111,11 +111,11 @@ static GAME_INLINE int G_SaberAttackPower(gentity_t *ent, qboolean attacking)
 	//Give "medium" strength for the two special stances.
 	if (baseLevel == SS_DUAL)
 	{
-		baseLevel = 1;
+		baseLevel = 2;
 	}
 	else if (baseLevel == SS_STAFF)
 	{
-		baseLevel = 1;
+		baseLevel = 2;
 	}
 
 	if (attacking)
