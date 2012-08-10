@@ -2596,7 +2596,7 @@ void ClientBegin( int clientNum, qboolean allowTeamReset ) {
 
 		//kaldor - Console Text print upon Entering game
 		if ( g_gametype.integer != GT_DUEL || g_gametype.integer == GT_POWERDUEL ) {
-			trap_SendServerCommand( ent-g_entities, "print \"\n^5Server running opensaber 12.03\n^5Use /manual for commands.\n^5This mod is intended on improving the saber system by making it less prone to abuse.\n\"" ); ( -1, va("print \"%s" S_COLOR_WHITE " %s\n\"", client->pers.netname, G_GetStringEdString("MP_SVGAME", "PLENTER")) );
+			trap_SendServerCommand( ent-g_entities, "print \"\n^5Server running opensaber Rolling Release\n^5Use /manual for commands.\n^5This mod is intended on improving the saber system by making it less prone to abuse.\n\"" ); ( -1, va("print \"%s" S_COLOR_WHITE " %s\n\"", client->pers.netname, G_GetStringEdString("MP_SVGAME", "PLENTER")) );
 		}
 	}
 	G_LogPrintf( "ClientBegin: %i\n", clientNum );
