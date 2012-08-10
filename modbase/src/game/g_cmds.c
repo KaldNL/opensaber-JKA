@@ -3172,7 +3172,7 @@ void ClientCommand( int clientNum ) {
 
 	//kaldor - this uname command is intended to give server users information on the computer opensaber was compiled on. Saber gameplay seems altered across different servers, OS's, and compilers. Change this to put in info on your system.
 	if (Q_stricmp (cmd, "uname") == 0) {
-		trap_SendServerCommand( ent-g_entities, va("print \"opensaber version 12.03 (Pre-release). Compiled with llvm-gcc on Ubuntu 12.04 LTS. Date: February 18, 2012\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"opensaber Rolling Release. Compiled with gcc on Ubuntu 12.10. Date: August 10, 2012\n\""));
 		return;
 	}
 
@@ -3200,6 +3200,16 @@ void ClientCommand( int clientNum ) {
 	  return;
         }
 	*/
+
+	//kaldor - Explains some standard settings
+	if (Q_stricmp (cmd, "t3settings") == 0) {
+	  trap_SendServerCommand( ent-g_entities, va("print \"-----Recommended Settings-----\n\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"cg_fov 100 (Zooms out the camera for better view)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"r_picmip 10 (Lowers texture quality for much better clarity)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"g_sabertrail 0 (Improves clarity by removing saber trail effect)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"rate 25000 (Allows for better connection)\n\""));
+	  return;
+        }
 	
 	//Kaldor - I am an idiot with C, so thanks be to azns. Attempting to make a /date command which will inform the user about how much of a life they have.
 	//seems to crash when compiling on Windows. Fixme.
@@ -3254,6 +3264,7 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"readlicense: Display brief summary of the mod's license\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"contactinfo: Contact info for the developer(s)\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"date: Show what time it is in the server's location\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"t3settings: Some recommended settings by Terminative 3\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"credits: Who did what for opensaber\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"^1--Server Commands--\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_SingleSaberOnly: Kick dual/staff users :)\n\""));
