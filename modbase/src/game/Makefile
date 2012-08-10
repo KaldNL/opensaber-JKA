@@ -6,9 +6,8 @@
 # === Variables ===
 
 # Compiler
-#Personally, I prefer llvm-gcc. It seems to improve the hit detection slightly. However, it may not work on older distros. change to "CC = gcc" for fool-proof compiling.
-#Verified to work with llvm-gcc and clang also. However, it seems that clang produces a Sysdll error.
-CC = llvm-gcc
+#Verified to work with llvm-gcc and clang also. However, it seems that clang produces a Sysdll error and llvm-gcc. llvm-gcc is unreliable for some machines. For trouble-free compiling, best to use gcc.
+CC = gcc
 
 # Compiler Flags
 # -D<name> ( Used to make a define like #define mydefine )
