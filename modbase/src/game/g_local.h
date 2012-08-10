@@ -26,7 +26,7 @@ extern vec3_t gPainPoint;
 //==================================================================
 
 // the "gameversion" client command will print this plus compile date
-#define	GAMEVERSION	"opensaber 12.03 (Pre-release)"
+#define	GAMEVERSION	"opensaber (Rolling)"
 
 #define BODY_QUEUE_SIZE		8
 
