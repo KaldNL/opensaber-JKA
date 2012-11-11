@@ -1763,7 +1763,7 @@ void Cmd_GameCommand_f( gentity_t *ent ) {
 	trap_Argv( 2, str, sizeof( str ) );
 	order = atoi( str );
 
-	if ( player < 0 || player >= MAX_CLIENTS ) {
+	if ( player < 0 || player >= level.maxclients ) {
 		return;
 	}
 	if ( order < 0 || order > sizeof(gc_orders)/sizeof(char *) ) {
