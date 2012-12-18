@@ -3212,12 +3212,13 @@ void ClientCommand( int clientNum ) {
         }
 	
 	//Kaldor - I am an idiot with C, so thanks be to azns. Attempting to make a /date command which will inform the user about how much of a life they have.
-	//seems to crash when compiling on Windows. Fixme.
+	//Thanks to czech people for being smarter than me.
 	//start clock
+	
 	if (Q_stricmp (cmd, "date") == 0) {
 	  time_t now;
-	  time(&now);
 	  char str[100];
+	  time(&now);
 	  strcpy(str, "print \"");
 	  strcat(str, ctime(&now));
 	  strcat(str, "\"");
