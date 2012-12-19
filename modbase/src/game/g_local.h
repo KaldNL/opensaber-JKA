@@ -1667,6 +1667,7 @@ extern vmCvar_t g_allowMultipleDuels;
 extern vmCvar_t g_duelHealthRestore;
 extern vmCvar_t g_duelShieldRestoreLevel;
 extern vmCvar_t g_singleSaberOnly;
+extern vmCvar_t g_fixedSabering;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );
