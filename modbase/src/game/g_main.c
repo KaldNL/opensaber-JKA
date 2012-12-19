@@ -224,6 +224,7 @@ vmCvar_t g_allowMultipleDuels;
 vmCvar_t g_duelHealthRestore;
 vmCvar_t g_duelShieldRestoreLevel;
 vmCvar_t g_singleSaberOnly;
+vmCvar_t g_fixedSabering;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -471,7 +472,8 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_allowMultipleDuels, "g_allowMultipleDuels", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_duelHealthRestore, "g_duelHealthRestore", "0", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_duelShieldRestoreLevel, "g_duelShieldRestoreLevel", "0", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_singleSaberOnly, "g_singleSaberOnly", "1", CVAR_ARCHIVE, 0, qtrue  }
+	{ &g_singleSaberOnly, "g_singleSaberOnly", "1", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_fixedSabering, "g_fixedSabering", "1", CVAR_ARCHIVE, 0, qtrue  }
 };
 
 // bk001129 - made static to avoid aliasing
