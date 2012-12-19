@@ -5,7 +5,9 @@
 
 #include "time.h" //kaldor - adding clock
 
+#if defined(__linux__)
 #include <sys/utsname.h> //kaldor - adding *nix uname functionality
+#endif
 
 #include "../../baseAAA/ui/menudef.h"			// for the voice chats
 
@@ -3173,6 +3175,7 @@ void ClientCommand( int clientNum ) {
 	//setementor - JKE console commands
 
 	//kaldor - this uname command is intended to give server users information on the computer opensaber was compiled on. Saber gameplay seems altered across different servers, OS's, and compilers. 
+	#if defined(__linux__)
 	if (Q_stricmp (cmd, "uname") == 0) {
 		struct utsname tmp;
   		uname(&tmp);
@@ -3182,7 +3185,7 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 TODO\n\""));
 		
 		return;
-	}
+	}#endif
 
         if (Q_stricmp (cmd, "credits") == 0) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"Main Developer: Kaldor\n\""));
