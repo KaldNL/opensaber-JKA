@@ -1,3 +1,17 @@
 Licensed under the GNU GPL version 2. 
 
-This mod is just a small side-project for some JKA players. This ReadMe will be done eventually.
+About the mod:
+
+This is a specialist mod for some JKA players, specifically Terminative 3. However, by keeping the source public we hope it will help other JKA players just the same.
+
+JKA is an old game. Those of us who are dedicated to this game should have the freedom to continue the game's evolution. opensaber is, and always will be, fully Free and open under the terms of the GNU GPL v2. This means you are free to modify opensaber (and even rebrand it) to fit your server's needs.
+
+Purpose:
+
+The intention is that the opensaber mod will provide a better experience for the saber system. Hit detection is better, block rates are altered slightly, and some extra (optional) serverside features are available. This mod is not developed by Star Wars fans. The people who are creating this modification are people who have spent years playing basejka in various forms from TFFA (pugging) to CTF (ctfpug). We know how the gameplay works, and we understand its flaws. Think of this mod as JKA's saber-only equivalent to Quake III modifications like CPMA. We also include a setting which can disable dual and staff sabers, meaning you can run a server with standard-saber only.
+
+The problem in basejka is that people tend to get kills by doing simple tricks. There's nothing wrong with the "exploits", but it detracts from the gameplay when players abuse the same tricks repeatedly. One such example is the extention via running toward the enemy with your back turned. This mod lessens the effect of this by allowing users to parry/block the saber while it is behind you. However, this does NOT mean that this mod will not allow the abuse of the blocking system like other mods do. This way, if you understand how the saber system (read: not OUR saber system, but the game overall) works you'll have an advantage over players who stick to one thing that they happen to be good at. The custom saber settings still maintain the "physics" and "feel" of basejka, but improve them. Skilled players should have absolutely no problem adjusting. If you complain about the blocks being too high on this mod, then it means you're most likely rushing too much and relying on spam. Clean, precise hits will not block at all. Just like on basejka.
+
+The changes to the sabering makes it so that good habits are rewarded while bad habits are discouraged. Spins or inaccurate wiggles mean that your saber will easily be knocked away. Proper timing (positioning, movement, mouse movement) will be more effective than in basejka. The damage at the very end of the swing is increased, so smooth, well-timed extensions/pokes/wiggles will do more damage. Fanning with yellow is more difficult due to the saber being solid through the entire swing. Yellow requires more accuracy than on base, and spam will be much less effective. Playing effectively on opensaber should help players develop better habits in basejka.
+
+Before brushing this off as just another JKA mod, please consider a few things. Remember that every player will always have room to improve. Remember that skill means more than winning fights and getting a positive K/D ratio in TFFA. Remember that you may be winning because the other player doesn't know how to counter your tricks; not because you understand the way you play. Finally, remember that nobody is unique in this game. Your "style" is just a slightly different way of doing the typical tactics.
