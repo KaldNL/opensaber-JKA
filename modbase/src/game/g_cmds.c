@@ -5,6 +5,8 @@
 
 #include "time.h" //kaldor - adding clock
 
+#include <sys/utsname.h> //kaldor - adding *nix uname functionality
+
 #include "../../baseAAA/ui/menudef.h"			// for the voice chats
 
 //rww - for getting bot commands...
@@ -3170,9 +3172,15 @@ void ClientCommand( int clientNum ) {
 
 	//setementor - JKE console commands
 
-	//kaldor - this uname command is intended to give server users information on the computer opensaber was compiled on. Saber gameplay seems altered across different servers, OS's, and compilers. Change this to put in info on your system.
+	//kaldor - this uname command is intended to give server users information on the computer opensaber was compiled on. Saber gameplay seems altered across different servers, OS's, and compilers. 
 	if (Q_stricmp (cmd, "uname") == 0) {
-		trap_SendServerCommand( ent-g_entities, va("print \"opensaber Rolling Release. Compiled with gcc on Ubuntu 12.10. Date: August 10, 2012\n\""));
+		struct utsname tmp;
+  		uname(&tmp);
+  		trap_SendServerCommand( ent-g_entities, va("print \"^5--Operating System Info--\n\""));
+ 		
+		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiled on:^7 %s %s %s %s\n", tmp.sysname, tmp.release, tmp.version, tmp.machine));
+		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 TODO\n\""));
+		
 		return;
 	}
 
@@ -3203,7 +3211,7 @@ void ClientCommand( int clientNum ) {
 
 	//kaldor - Explains some standard settings
 	if (Q_stricmp (cmd, "t3settings") == 0) {
-	  trap_SendServerCommand( ent-g_entities, va("print \"-----Recommended Settings-----\n\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"--Recommended Player Settings--\n\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"cg_fov 100 (Zooms out the camera for better view)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"r_picmip 10 (Lowers texture quality for much better clarity)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"g_sabertrail 0 (Improves clarity by removing saber trail effect)\n\""));
@@ -3267,7 +3275,7 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"date: Show what time it is in the server's location\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"t3settings: Some recommended settings by Terminative 3\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"credits: Who did what for opensaber\n\""));
-		trap_SendServerCommand( ent-g_entities, va("print \"^1--Server Commands--\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"\n^5--Server Commands--\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_SingleSaberOnly: Kick dual/staff users :)\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberSPStyleDamage: Alter the saber system. 1 = Regular basejka, 0 = Touch damage and higher blocking with lower damage\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberInterpolate: Lowers the damage and makes blocking more accurate. Warning; it causes ghosting\n\""));
