@@ -3185,7 +3185,9 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 TODO\n\""));
 		
 		return;
-	}#endif
+	}
+	
+	#endif
 
         if (Q_stricmp (cmd, "credits") == 0) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"Main Developer: Kaldor\n\""));
