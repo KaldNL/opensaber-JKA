@@ -3027,13 +3027,15 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 				return FORCE_LEVEL_0;
 			}
 			return FORCE_LEVEL_3;
+			fDmg = 0.5f; //kaldor - reduce damage
 			break;
 		case BOTH_BUTTERFLY_LEFT:
 		case BOTH_BUTTERFLY_RIGHT:
 		case BOTH_BUTTERFLY_FL1:
 		case BOTH_BUTTERFLY_FR1:
 			//FIXME: break up?
-			return FORCE_LEVEL_3;
+			return FORCE_LEVEL_3; 
+			fDmg = 0.5f; //kaldor - reduce damage
 			break;
 		case BOTH_FJSS_TR_BL:
 		case BOTH_FJSS_TL_BR:
@@ -4250,7 +4252,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 						{ //special kata move
 							if (self->client->ps.fd.saberAnimLevel == SS_DUAL)
 							{ //this is the nasty saber twirl, do big damage cause it makes you vulnerable
-								dmg = 50; //kaldor - reducing from 90.
+								dmg = 10; //kaldor - reducing from 90.
 							}
 							else
 							{ //staff kata
