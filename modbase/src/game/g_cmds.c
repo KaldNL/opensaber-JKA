@@ -3177,7 +3177,7 @@ void ClientCommand( int clientNum ) {
 		struct utsname tmp;
   		uname(&tmp);
   		trap_SendServerCommand( ent-g_entities, va("print \"^5--Operating System Info--\n\""));
- 		
+ 		trap_SendServerCommand( ent-g_entities, va("print \"^5Server Host:^7 %s %s %s %s\n", tmp.sysname, tmp.release, tmp.version, tmp.machine));
 		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiled on:^7 %s %s %s %s\n", tmp.sysname, tmp.release, tmp.version, tmp.machine));
 		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 TODO\n\""));
 		
