@@ -3225,8 +3225,11 @@ void ClientCommand( int clientNum ) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"cl_maxpackets 100 (Allows for better connection)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"com_maxfps 125 (Smoother gameplay, movement)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"cg_hudfiles 1 (Less distracting HUD)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"r_fastsky 1 (Less distracting sky)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"r_dynamiclight 0 (Less distracting saber)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"r_dynamicglow 0 (Less distracting saber)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"\nNote: These may be odd at first, but we\n\""));
-	  trap_SendServerCommand( ent-g_entities, va("print \"heavily recommend adjusting\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"heavily recommend adjusting.\n\""));
 	  return;
         }
 	
