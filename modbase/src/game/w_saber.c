@@ -3223,7 +3223,7 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 		 } 
 		
       		  else if (SS_FAST) {
-      		  return FORCE_LEVEL_3; 
+      		  return FORCE_LEVEL_0; 
       		  break;
       		  }
         
@@ -4104,7 +4104,18 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
 					fDmg = 1.5f; //kaldor - changing for testing. default 1.0f.
-					attackStr = FORCE_LEVEL_1; //default 0
+					/*attackStr = FORCE_LEVEL_1; //default 0*/
+					
+					
+				//We only want this for Single saber!
+					if      (SS_DUAL) {attackStr = FORCE_LEVEL_0;}
+					else if (SS_STAFF) {attackStr = FORCE_LEVEL_0;}
+					else if (SS_STRONG) {attackStr = FORCE_LEVEL_1;}
+					else if (SS_MEDIUM) {attackStr = FORCE_LEVEL_1;}
+					else if (SS_FAST) {attackStr = FORCE_LEVEL_1;}
+					else {attackStr = FORCE_LEVEL_1;}
+				//end retreating phase
+				
 				}
 				else
 				{
