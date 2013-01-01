@@ -3804,6 +3804,7 @@ void ClientSpawn(gentity_t *ent) {
 	}
 
 	// run the presend to set anything else
+	if ( ent->client->sess.spectatorState != SPECTATOR_FOLLOW ) //kaldor -- ghost player fix, thanks Raz0r
 	ClientEndFrame( ent );
 
 	// clear entity state values
