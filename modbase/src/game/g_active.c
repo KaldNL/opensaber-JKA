@@ -722,19 +722,21 @@ void SpectatorThink( gentity_t *ent, usercmd_t *ucmd ) {
 
 	client->oldbuttons = client->buttons;
 	client->buttons = ucmd->buttons;
-
-	if (client->tempSpectate < level.time)
-	{
+		//kaldor -- allowing spectator cycling backwards
+		if (client->tempSpectate < level.time)
+		{
 		// attack button cycles through spectators
-		if ( ( client->buttons & BUTTON_ATTACK ) && ! ( client->oldbuttons & BUTTON_ATTACK ) ) {
-			Cmd_FollowCycle_f( ent, 1 );
-		}
-
+		if ( (client->buttons & BUTTON_ATTACK) && !(client->oldbuttons & BUTTON_ATTACK) )
+		Cmd_FollowCycle_f( ent, 1 );
+		
+		else if ( client->sess.spectatorState == SPECTATOR_FOLLOW && (client->buttons & BUTTON_ALT_ATTACK) && !(client->oldbuttons & BUTTON_ALT_ATTACK) )
+		Cmd_FollowCycle_f( ent, -1 );
+		
 		if (client->sess.spectatorState == SPECTATOR_FOLLOW && (ucmd->upmove > 0))
-		{ //jump now removes you from follow mode
+			{ //jump now removes you from follow mode
 			StopFollowing(ent);
-		}
-	}
+			}
+		} 
 }
 
 
