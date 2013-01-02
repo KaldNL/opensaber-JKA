@@ -3027,7 +3027,7 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 				return FORCE_LEVEL_0;
 			}
 			return FORCE_LEVEL_3;
-			fDmg = 0.5f; //kaldor - reduce damage
+			float fDmg = 0.1f; //kaldor - reduce damage
 			break;
 		case BOTH_BUTTERFLY_LEFT:
 		case BOTH_BUTTERFLY_RIGHT:
