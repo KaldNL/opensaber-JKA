@@ -3192,7 +3192,7 @@ void ClientCommand( int clientNum ) {
         if (Q_stricmp (cmd, "credits") == 0) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"Main Developer: Kaldor\n\""));
           trap_SendServerCommand( ent-g_entities, va("print \"Contributor: Setementor\n\""));
-          trap_SendServerCommand( ent-g_entities, va("print \"Advisor/Tester: Hugo\n\""));
+          trap_SendServerCommand( ent-g_entities, va("print \"Advisor/Tester: Hugo, Tommy\n\""));
           trap_SendServerCommand( ent-g_entities, va("print \"Early Testers: Xanatos and DE clan\n\""));
           trap_SendServerCommand( ent-g_entities, va("print \"Servers: DJ_Sith & Lokarn\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"Bug Fixes: Ramses\n\""));
@@ -3294,10 +3294,10 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberSPStyleDamage: Alter the saber system. 1 = Regular basejka, 0 = Touch damage and higher blocking with lower damage\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberInterpolate: Lowers the damage and makes blocking more accurate. Warning; it causes ghosting\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_allowBlackNames: Enable/disable the use of ^0black names\n\""));
-		trap_SendServerCommand( ent-g_entities, va("print \"g_allowMultipleDuels: Enable/disable the ability to have more than one duel at a timen\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_allowMultipleDuels: Enable/disable the ability to have more than one duel at a time\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelHealthRestore: Enable/disable HP reset for dueling in FFA\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelShieldRestoreLevel: The amount of armour that is given in a duel\n\""));
-		
+		trap_SendServerCommand( ent-g_entities, va("print \"g_boostDuelDamage: Boost damage in Duel Gametype to match FFA and TFFA\n\""));
 
 		return;
 	}
