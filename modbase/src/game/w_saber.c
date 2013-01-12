@@ -3202,7 +3202,7 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 			return FORCE_LEVEL_3; //kaldor - default 0. Changing for testing. This seems to start "swing" in the preparation phase.*/
 			//kaldor - These are experimental fixes to the saber phases. Trying to make single saber start early, while letting dual/staff remain the same as normal (basejka)		
 	
-	if ( g_solidPrepPhase.integer == 1 ) {
+	if ( !g_solidPrepPhase.integer == 1 ) {
 	
 		if (SS_DUAL) {
 		return FORCE_LEVEL_0;
@@ -3238,7 +3238,7 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
       		  
       		  }
       		  
-      	else if ( g_solidPrepPhase.integer == 0 ) {
+      	else if ( !g_solidPrepPhase.integer == 0 ) {
       		  
       		  return FORCE_LEVEL_0;
       		  break;
@@ -4105,7 +4105,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 					|| !saberEnt->s.saberInFlight )
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
-					fDmg = 1.35f; //kaldor - changing for testing. default 1.0f. opensaber default 1.5
+					fDmg = 1.40f; //kaldor - changing for testing. default 1.0f. opensaber default 1.5
 					/*attackStr = FORCE_LEVEL_1; //default 0*/
 					
 					
