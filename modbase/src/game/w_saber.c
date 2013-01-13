@@ -4105,7 +4105,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 					|| !saberEnt->s.saberInFlight )
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
-					fDmg = 1.40f; //kaldor - changing for testing. default 1.0f. opensaber default 1.5
+					fDmg = 1.35f; //kaldor - changing for testing. default 1.0f. opensaber default 1.5
 					/*attackStr = FORCE_LEVEL_1; //default 0*/
 					
 					
