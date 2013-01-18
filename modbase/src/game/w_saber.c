@@ -4188,6 +4188,14 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			{//in faster-paced games, sabers do more damage
 				fDmg *= 2.0f;
 			}
+			
+			//kaldor - Option to enable the opensaber damage boost in Duel gametype
+			if (g_boostDuelDamage.integer == 0) {
+			    if (g_gametype.integer == GT_DUEL)
+			    {
+			        fDmg *= 0.5f;
+			    }
+			}
 
 			if ( fDmg )
 			{//the longer the trace, the more damage it does
