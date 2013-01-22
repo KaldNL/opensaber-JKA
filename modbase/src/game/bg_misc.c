@@ -308,6 +308,7 @@ int WeaponAttackAnim[WP_NUM_WEAPONS] =
 	BOTH_THERMAL_THROW,//WP_THERMAL,
 	BOTH_ATTACK3,//BOTH_ATTACK11,//WP_TRIP_MINE,
 	BOTH_ATTACK3,//BOTH_ATTACK12,//WP_DET_PACK,
+	BOTH_ATTACK4,//kaldor - This fixes the animation on the JK2 pistol
 	BOTH_ATTACK2,//WP_BRYAR_OLD,
 
 	//NOT VALID (e.g. should never really be used):
