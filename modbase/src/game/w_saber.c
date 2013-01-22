@@ -4134,12 +4134,12 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			*/
 			else if (self->client->ps.fd.saberAnimLevel == SS_STAFF)
 			{
-			    fDmg = 0.70f;
+			    fDmg = 0.90f;
 			}
 			
 			else if (self->client->ps.fd.saberAnimLevel == SS_DUAL)
 			{
-			    fDmg = 0.75f;
+			    fDmg = 0.95f;
 			}
 			// end staff and dual nerf
 			
