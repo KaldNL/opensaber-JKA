@@ -4123,6 +4123,26 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 					attackStr = FORCE_LEVEL_1;
 				}
 			}
+			
+			// kaldor - nerf staff and dual
+			/*
+			Why Nerf the Special stances?
+			
+			We feel that due to the exploit-heavy and bugged nature of the special stances, it makes the game unbalanced when compared to the complete and well-rounded Standard saber. Dual and staff have a tendency to become spam-friendly, which greatly detracts from the skilled nature of JKA. Staff and dual have a huge advantage with blocks while still having very high damage rates which leads to an overkill amount of pressure being placed on Single Saber users.
+			
+			With lower damage, staff and dual should still be effective for the skilled players.
+			*/
+			else if (self->client->ps.fd.saberAnimLevel == SS_STAFF)
+			{
+			    fDmg = 0.7f;
+			}
+			
+			else if (self->client->ps.fd.saberAnimLevel == SS_DUAL)
+			{
+			    fDmg = 0.7f;
+			}
+			// end staff and dual nerf
+			
 			else
 			{
 				attackStr = G_PowerLevelForSaberAnim( self, rSaberNum, qfalse );
