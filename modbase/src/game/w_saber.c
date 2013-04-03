@@ -4378,6 +4378,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				else
 				{
 					dmg = SABER_NONATTACK_DAMAGE; //kaldor - According to ClanMod's source, this should make the sabers feel more base-like compared to typical mods. Default 0
+					//dmg = 0;
 				}
 			}
 		}
@@ -4385,7 +4386,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 		{
 			dmg = SABER_NONATTACK_DAMAGE;
 		}
-		idleDamage = qfalse; //kaldor - hopefully changing to false will remove the fuckfest of parries on MP.
+		idleDamage = qtrue; //kaldor - hopefully changing to false will remove the fuckfest of parries on MP.
 	}
 	else
 	{
