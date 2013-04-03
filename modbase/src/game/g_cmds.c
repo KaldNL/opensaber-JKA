@@ -2845,14 +2845,16 @@ void Cmd_EngageDuel_f(gentity_t *ent)
 	{
 		return;
 	}
-
+	
+	/* kaldor - why is this even a feature? 
 	//New: Don't let a player duel if he just did and hasn't waited 10 seconds yet (note: If someone challenges him, his duel timer will reset so he can accept)
 	if (ent->client->ps.fd.privateDuelTime > level.time)
 	{
 		trap_SendServerCommand( ent-g_entities, va("print \"%s\n\"", G_GetStringEdString("MP_SVGAME", "CANTDUEL_JUSTDID")) );
 		return;
 	}
-
+	*/
+	
     //setementor - this prevents there being more than one duel at a time
 	if (G_OtherPlayersDueling() && !g_allowMultipleDuels.integer)
 	{
