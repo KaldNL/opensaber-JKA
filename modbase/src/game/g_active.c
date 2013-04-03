@@ -1659,12 +1659,13 @@ typedef enum
 
 void G_SetTauntAnim( gentity_t *ent, int taunt )
 {
-	if (ent->client->pers.cmd.upmove ||
+	//kaldor - removing this because being stuck is annoying
+	/*if (ent->client->pers.cmd.upmove ||
 		ent->client->pers.cmd.forwardmove ||
 		ent->client->pers.cmd.rightmove)
 	{ //hack, don't do while moving
 		return;
-	}
+	}*/
 	if ( taunt != TAUNT_TAUNT )
 	{//normal taunt always allowed
 		if ( g_gametype.integer != GT_DUEL
