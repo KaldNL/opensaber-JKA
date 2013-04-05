@@ -150,7 +150,7 @@ static GAME_INLINE int G_SaberAttackPower(gentity_t *ent, qboolean attacking)
 				toleranceAmt = 5; //making this low to avoid parry abuse - kaldor
 				break;
 			default: //dual, staff, etc.
-				toleranceAmt = 5; //same here
+				toleranceAmt = 10; //same here
 				break;
 			}
 
@@ -3194,10 +3194,12 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 			}
 		  else if ( animTimeElapsed < 250 ) //default <250
 			{//start of anim
-			  return FORCE_LEVEL_0; //kaldor - going to try to alter these to see what they do. Default 0.
+			  return FORCE_LEVEL_0; 
+			  //kaldor - going to try to alter these to see what they do. Default 0.
 			}
 /*
-			return FORCE_LEVEL_3; //kaldor - default 0. Changing for testing. This seems to start "swing" in the preparation phase.*/
+			return FORCE_LEVEL_3; 
+			//kaldor - default 0. Changing for testing. This seems to start "swing" in the preparation phase.*/
 			//kaldor - These are experimental fixes to the saber phases. Trying to make single saber start early, while letting dual/staff remain the same as normal (basejka)		
 	
 	if ( !g_solidPrepPhase.integer == 1 ) {
@@ -4103,7 +4105,8 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 					|| !saberEnt->s.saberInFlight )
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
-					fDmg = 1.35f; //kaldor - changing for testing. default 1.0f. opensaber default 1.5
+				//This *does* allow very high damaged wiggle/poke/etc. However, this can lead to faster paced gameplay for better players. It will also force players to be much more precise when timing their mouse movement by rewarding better swings.
+					fDmg = 1.35f; //kaldor - changing for testing. default 1.0f. Previous opensaber versions default 1.5
 					/*attackStr = FORCE_LEVEL_1; //default 0*/
 					
 					
@@ -4130,16 +4133,17 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			
 			We feel that due to the exploit-heavy and bugged nature of the special stances, it makes the game unbalanced when compared to the complete and well-rounded Standard saber. Dual and staff have a tendency to become spam-friendly, which greatly detracts from the skilled nature of JKA. Staff and dual have a huge advantage with blocks while still having very high damage rates which leads to an overkill amount of pressure being placed on Single Saber users.
 			
-			With lower damage, staff and dual should still be effective for the skilled players.
+			With lower damage, staff and dual should still be effective for the skilled players. If you want the other player to die, switch stances and use a long wiggle; it can do a heavy amount of damage. The idea with staff and dual is currently to "shave" damage as opposed to being a tank.
+			
 			*/
 			else if (self->client->ps.fd.saberAnimLevel == SS_STAFF)
 			{
-			    fDmg = 0.90f;
+			    fDmg = 0.97f;
 			}
 			
 			else if (self->client->ps.fd.saberAnimLevel == SS_DUAL)
 			{
-			    fDmg = 0.95f;
+			    fDmg = 0.97f;
 			}
 			// end staff and dual nerf
 			
@@ -4201,6 +4205,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			}
 			*/
 			//kaldor - making duel gametype have normal damage (like FFA and TFFA)
+			//Having duel gametype consistent with FFA/TFFA/CTF is a positive thing, in my opinion.
 			if (g_gametype.integer != GT_POWERDUEL
 			  && g_gametype.integer != GT_SIEGE )
 			{//in faster-paced games, sabers do more damage
@@ -4211,7 +4216,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			if (g_boostDuelDamage.integer == 0) {
 			    if (g_gametype.integer == GT_DUEL)
 			    {
-			        fDmg *= 0.5f;
+			        fDmg *= 1.0f;
 			    }
 			}
 
@@ -4378,6 +4383,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				else
 				{
 				//	dmg = SABER_NONATTACK_DAMAGE; //kaldor - According to ClanMod's source, this should make the sabers feel more base-like compared to typical mods. Default 0
+					//nope... it just made SP damage have saber rub.
 					dmg = 0;
 				}
 			}
@@ -5413,7 +5419,7 @@ void G_SPSaberDamageTraceLerped( gentity_t *self, int saberNum, int bladeNum, ve
 			curDirFrac = 1.0f;
 		}
 		//NOTE: if saber spun at least 180 degrees since last damage trace, this is not reliable...!
-		if ( fabs(curDirFrac) < 0.5f - MAX_SABER_SWING_INC ) //kaldor - changed from 1.0f. Unsure what this is for
+		if ( fabs(curDirFrac) < 0.5f - MAX_SABER_SWING_INC ) //kaldor - changed from 1.0f. Unsure what this is for (I know what I am doing, I swear!)
 		{//the saber blade spun more than 33 degrees since the last damage trace
 			curDirFrac = dirInc = 0.5f/((0.5f - curDirFrac)/MAX_SABER_SWING_INC); //same here
 		}
