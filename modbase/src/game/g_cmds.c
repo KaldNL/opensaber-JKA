@@ -3183,8 +3183,9 @@ void ClientCommand( int clientNum ) {
   		uname(&tmp);
   		trap_SendServerCommand( ent-g_entities, va("print \"^5--Operating System Info--\n\""));
  		trap_SendServerCommand( ent-g_entities, va("print \"^5Server Host:^7 %s %s %s %s\n", tmp.sysname, tmp.release, tmp.version, tmp.machine));
-		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiled on:^7 %s %s %s %s\n", tmp.sysname, tmp.release, tmp.version, tmp.machine));
-		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 TODO\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiled on:^7 GNU/Linux\n\"")); //put your Linux distro name, version, and arch here
+		trap_SendServerCommand( ent-g_entities, va("print \"^5Compiler:^7 Unknown\n\"")); //put your compiler and version here
+		trap_SendServerCommand( ent-g_entities, va("print \"^5opensaber version:^7 git\n\"")); //put your mod name here
 		
 		return;
 	}
@@ -3195,10 +3196,9 @@ void ClientCommand( int clientNum ) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"Main Developer: Kaldor\n\""));
           trap_SendServerCommand( ent-g_entities, va("print \"Contributor: Setementor\n\""));
           trap_SendServerCommand( ent-g_entities, va("print \"Advisor/Tester: Hugo, Tommy\n\""));
-          trap_SendServerCommand( ent-g_entities, va("print \"Early Testers: Xanatos and DE clan\n\""));
-          trap_SendServerCommand( ent-g_entities, va("print \"Servers: DJ_Sith & Lokarn\n\""));
-	  trap_SendServerCommand( ent-g_entities, va("print \"Bug Fixes: Ramses\n\""));
-          trap_SendServerCommand( ent-g_entities, va("print \"Fixed Source: jacoders.org (Raz0r)\n\""));
+          trap_SendServerCommand( ent-g_entities, va("print \"Servers: DJ_Sith, Lokarn, Toaster\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"Bug Fixes: Ramses, Sil\n\""));
+          trap_SendServerCommand( ent-g_entities, va("print \"Fixed Source: jacoders.org community\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"Duel Stats: clanmod.org\n\""));
 	  return;
         }
@@ -3295,7 +3295,7 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"g_SingleSaberOnly: Kick dual/staff users :)\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberSPStyleDamage: Alter the saber system. 1 = Regular basejka, 0 = Touch damage and higher blocking with lower damage\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberInterpolate: Lowers the damage and makes blocking more accurate. Warning; it causes ghosting\n\""));
-		trap_SendServerCommand( ent-g_entities, va("print \"g_allowBlackNames: Enable/disable the use of ^0black names\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_allowBlackNames: Enable/disable the use of black names\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_allowMultipleDuels: Enable/disable the ability to have more than one duel at a time\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelHealthRestore: Enable/disable HP reset for dueling in FFA\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelShieldRestoreLevel: The amount of armour that is given in a duel\n\""));
