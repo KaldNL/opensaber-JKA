@@ -2291,7 +2291,7 @@ char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 			}
 		}
 
-		if (sameIPs > 3)
+		if (sameIPs > 10) //kaldor - change to 10 because whatever
 		{
 			return "Too many clients from this IP.";
 		}
