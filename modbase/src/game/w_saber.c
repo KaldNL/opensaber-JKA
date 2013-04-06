@@ -150,7 +150,7 @@ static GAME_INLINE int G_SaberAttackPower(gentity_t *ent, qboolean attacking)
 				toleranceAmt = 5; //making this low to avoid parry abuse - kaldor
 				break;
 			default: //dual, staff, etc.
-				toleranceAmt = 10; //same here
+				toleranceAmt = 5; //same here
 				break;
 			}
 
