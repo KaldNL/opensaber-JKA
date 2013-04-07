@@ -3246,7 +3246,7 @@ CheckVote
 void CheckVote( void ) {
 	if ( level.voteExecuteTime && level.voteExecuteTime < level.time ) {
 		level.voteExecuteTime = 0;
-		trap_SendConsoleCommand( EXEC_APPEND, va("%s\n", level.voteString ) );
+		trap_SendConsoleCommand( EXEC_APPEND, va("%s\n\"", level.voteString ) );
 
 		if (level.votingGametype)
 		{
