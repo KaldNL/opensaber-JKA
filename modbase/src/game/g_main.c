@@ -3306,15 +3306,15 @@ void CheckVote( void ) {
 		return;
 	}
 	if ( level.time - level.voteTime >= VOTE_TIME ) {
-		trap_SendServerCommand( -1, va("print \"%s ( %s )\n\"", G_GetStringEdString("MP_SVGAME", "VOTEFAILED"), level.voteString) ); //kaldor - thanks for the idea, Raz0r
+		trap_SendServerCommand( -1, va("print \"%s (%s) \n\"", G_GetStringEdString("MP_SVGAME", "VOTEFAILED"), level.voteString) ); //kaldor - thanks for the idea, Raz0r
 	} else {
 		if ( level.voteYes > level.numVotingClients/2 ) {
 			// execute the command, then remove the vote
-			trap_SendServerCommand( -1, va("print \"%s ( %s )\n\"", G_GetStringEdString("MP_SVGAME", "VOTEPASSED"), level.voteString) );
+			trap_SendServerCommand( -1, va("print \"%s (%s) \n\"", G_GetStringEdString("MP_SVGAME", "VOTEPASSED"), level.voteString) );
 			level.voteExecuteTime = level.time + 3000;
 		} else if ( level.voteNo >= level.numVotingClients/2 ) {
 			// same behavior as a timeout
-			 trap_SendServerCommand( -1, va("print \"%s ( %s )\n\"", G_GetStringEdString("MP_SVGAME", "VOTEFAILED"), level.voteString) );
+			 trap_SendServerCommand( -1, va("print \"%s (%s) \n\"", G_GetStringEdString("MP_SVGAME", "VOTEFAILED"), level.voteString) );
 		} else {
 			// still waiting for a majority
 			return;
