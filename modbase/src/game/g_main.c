@@ -266,7 +266,7 @@ static cvarTable_t		gameCvarTable[] = {
 
 	{ &g_armBreakage, "g_armBreakage", "0", 0, 0, qtrue  },
 
-	{ &g_saberLocking, "g_saberLocking", "1", CVAR_SERVERINFO | CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_saberLocking, "g_saberLocking", "0", CVAR_SERVERINFO | CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_saberLockFactor, "g_saberLockFactor", "2", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_saberTraceSaberFirst, "g_saberTraceSaberFirst", "0", CVAR_ARCHIVE, 0, qtrue  },
 
@@ -331,8 +331,8 @@ static cvarTable_t		gameCvarTable[] = {
 
 	{ &d_saberInterpolate, "d_saberInterpolate", "0", 0, 0, qtrue }, //setementor - removed cheat protection temporarily for testing
 
-	{ &g_friendlyFire, "g_friendlyFire", "0", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_friendlySaber, "g_friendlySaber", "0", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_friendlyFire, "g_friendlyFire", "1", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_friendlySaber, "g_friendlySaber", "1", CVAR_ARCHIVE, 0, qtrue  },
 
 	{ &g_teamAutoJoin, "g_teamAutoJoin", "0", CVAR_ARCHIVE  },
 	{ &g_teamForceBalance, "g_teamForceBalance", "0", CVAR_ARCHIVE  },
