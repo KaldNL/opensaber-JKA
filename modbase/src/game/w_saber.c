@@ -6563,8 +6563,9 @@ void saberReactivate(gentity_t *saberent, gentity_t *saberOwner)
 
 	trap_LinkEntity(saberent);
 }
+//kaldor - adding quick pickup. Default 3000
 
-#define SABER_RETRIEVE_DELAY 3000 //3 seconds for now. This will leave you nice and open if you lose your saber.
+#define SABER_RETRIEVE_DELAY 1000 //3 seconds for now. This will leave you nice and open if you lose your saber.
 
 void saberKnockDown(gentity_t *saberent, gentity_t *saberOwner, gentity_t *other)
 {
