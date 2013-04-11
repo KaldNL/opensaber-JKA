@@ -3221,7 +3221,7 @@ void ClientCommand( int clientNum ) {
 	  trap_SendServerCommand( ent-g_entities, va("print \"--Recommended Player Settings--\n\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"cg_fov 97 (Zooms out the camera for better view)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"r_picmip 12 (Lowers texture quality for much better clarity)\n\""));
-	  trap_SendServerCommand( ent-g_entities, va("print \"g_sabertrail 0 (Improves clarity by removing saber trail effect)\n\""));
+	  trap_SendServerCommand( ent-g_entities, va("print \"cg_sabertrail 0 (Improves clarity by removing saber trail effect)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"rate 25000 (Syncs your client to server)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"snaps 40 (Allows for better connection)\n\""));
 	  trap_SendServerCommand( ent-g_entities, va("print \"cl_maxpackets 100 (Allows for better connection)\n\""));
