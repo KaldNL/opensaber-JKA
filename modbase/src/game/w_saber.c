@@ -4106,7 +4106,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
 				//This *does* allow very high damaged wiggle/poke/etc. However, this can lead to faster paced gameplay for better players. It will also force players to be much more precise when timing their mouse movement by rewarding better swings.
-					fDmg = 1.35f; //kaldor - changing for testing. default 1.0f. Previous opensaber 12.03 default 1.5. 13.01 default 1.35
+					fDmg = 1.30f; //kaldor - changing for testing. default 1.0f. Previous opensaber 12.03 default 1.5. 13.01 default 1.35
 					/*attackStr = FORCE_LEVEL_1; //default 0*/
 					
 					
