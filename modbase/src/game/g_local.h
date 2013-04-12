@@ -1669,6 +1669,7 @@ extern vmCvar_t g_duelShieldRestoreLevel;
 extern vmCvar_t g_singleSaberOnly;
 extern vmCvar_t g_solidPrepPhase;
 extern vmCvar_t g_boostDuelDamage;
+extern vmCvar_t g_allowEmotes;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

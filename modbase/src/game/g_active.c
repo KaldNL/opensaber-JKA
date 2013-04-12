@@ -1671,7 +1671,14 @@ void G_SetTauntAnim( gentity_t *ent, int taunt )
 		if ( g_gametype.integer != GT_DUEL
 			&& g_gametype.integer != GT_POWERDUEL )
 		{//no taunts unless in Duel
+		//kaldor - make it an option. Emotes can fuck with saber animations.
+			if ( !g_allowEmotes.integer == 1 ) {
 			//return; //Uncomment this to disable meditate, bow etc
+			}
+			
+			else {
+			return;
+			}
 		}
 	}
 	if ( ent->client->ps.torsoTimer < 1 
