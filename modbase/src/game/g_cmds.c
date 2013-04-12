@@ -3297,6 +3297,7 @@ void ClientCommand( int clientNum ) {
 		trap_SendServerCommand( ent-g_entities, va("print \"d_SaberInterpolate: Lowers the damage and makes blocking more accurate. Warning; it causes ghosting\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_allowBlackNames: Enable/disable the use of black names\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_allowMultipleDuels: Enable/disable the ability to have more than one duel at a time\n\""));
+		trap_SendServerCommand( ent-g_entities, va("print \"g_allowEmotes: Enable/disable emotes (set to 0 to prevent abuse)\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelHealthRestore: Enable/disable HP reset for dueling in FFA\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_duelShieldRestoreLevel: The amount of armour that is given in a duel\n\""));
 		trap_SendServerCommand( ent-g_entities, va("print \"g_boostDuelDamage: Boost damage in Duel Gametype to match FFA and TFFA\n\""));
