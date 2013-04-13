@@ -1670,6 +1670,7 @@ extern vmCvar_t g_singleSaberOnly;
 extern vmCvar_t g_solidPrepPhase;
 extern vmCvar_t g_boostDuelDamage;
 extern vmCvar_t g_allowEmotes;
+extern vmCvar_t g_promodeSabers;
 
 void	trap_Printf( const char *fmt );
 void	trap_Error( const char *fmt );

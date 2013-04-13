@@ -227,6 +227,7 @@ vmCvar_t g_singleSaberOnly;
 vmCvar_t g_solidPrepPhase;
 vmCvar_t g_boostDuelDamage;
 vmCvar_t g_allowEmotes;
+vmCvar_t g_promodeSabers;
 
 // bk001129 - made static to avoid aliasing
 static cvarTable_t		gameCvarTable[] = {
@@ -472,12 +473,13 @@ static cvarTable_t		gameCvarTable[] = {
 //JKE Server Commands //setementor
 	{ &g_allowBlackNames, "g_allowBlackNames", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_allowMultipleDuels, "g_allowMultipleDuels", "1", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_duelHealthRestore, "g_duelHealthRestore", "0", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_duelShieldRestoreLevel, "g_duelShieldRestoreLevel", "0", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_duelHealthRestore, "g_duelHealthRestore", "1", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_duelShieldRestoreLevel, "g_duelShieldRestoreLevel", "25", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_singleSaberOnly, "g_singleSaberOnly", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_solidPrepPhase, "g_solidPrepPhase", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_boostDuelDamage, "g_boostDuelDamage", "1", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_allowEmotes, "g_allowEmotes", "0", CVAR_ARCHIVE, 0, qtrue  }
+	{ &g_allowEmotes, "g_allowEmotes", "0", CVAR_ARCHIVE, 0, qtrue  },
+	{ &g_allowEmotes, "g_promodeSabers", "1", CVAR_CHEAT, 0, qtrue  }
 };
 
 // bk001129 - made static to avoid aliasing
