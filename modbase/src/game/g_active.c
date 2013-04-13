@@ -1677,6 +1677,7 @@ void G_SetTauntAnim( gentity_t *ent, int taunt )
 			}
 			
 			else {
+			trap_SendServerCommand( ent-g_entities, va("print \"Emotes are disabled on this server.\n\""));
 			return;
 			}
 		}
