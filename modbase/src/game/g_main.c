@@ -479,7 +479,7 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_solidPrepPhase, "g_solidPrepPhase", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_boostDuelDamage, "g_boostDuelDamage", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_allowEmotes, "g_allowEmotes", "0", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_allowEmotes, "g_promodeSabers", "1", CVAR_CHEAT, 0, qtrue  }
+	{ &g_promodeSabers, "g_promodeSabers", "1", CVAR_CHEAT, 0, qtrue  }
 };
 
 // bk001129 - made static to avoid aliasing
