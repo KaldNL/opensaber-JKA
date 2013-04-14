@@ -4063,18 +4063,9 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 				{//does less damage on the way back 
 				//kaldor - this affects damage in the retreating phase. Increased slightly to make up for the blockrates (clean cuts will do nice damage, as well as nicely aimed extends)
 				//This *does* allow very high damaged wiggle/poke/etc. However, this can lead to faster paced gameplay for better players. It will also force players to be much more precise when timing their mouse movement by rewarding better swings.
-					fDmg = 1.30f; //kaldor - changing for testing. default 1.0f. Previous opensaber 12.03 default 1.5. 13.01 default 1.35
-					/*attackStr = FORCE_LEVEL_1; //default 0*/
+					fDmg = 2.33f; //kaldor - changing for testing. default 1.0f. Previous opensaber 12.03 default 1.5. 13.01 default 1.35
+					attackStr = FORCE_LEVEL_2; //default 0. 13.01 default 1.
 					
-					
-				//We only want this for Single saber!
-					if      (SS_DUAL) {attackStr = FORCE_LEVEL_0;}
-					else if (SS_STAFF) {attackStr = FORCE_LEVEL_0;}
-					else if (SS_STRONG) {attackStr = FORCE_LEVEL_1;}
-					else if (SS_MEDIUM) {attackStr = FORCE_LEVEL_1;}
-					else if (SS_FAST) {attackStr = FORCE_LEVEL_1;}
-					else {attackStr = FORCE_LEVEL_1;}
-				//end retreating phase
 				
 				}
 				else
@@ -4090,7 +4081,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			
 			We feel that due to the exploit-heavy and bugged nature of the special stances, it makes the game unbalanced when compared to the complete and well-rounded Standard saber. Dual and staff have a tendency to become spam-friendly, which greatly detracts from the skilled nature of JKA. Staff and dual have a huge advantage with blocks while still having very high damage rates which leads to an overkill amount of pressure being placed on Single Saber users.
 			
-			With lower damage, staff and dual should still be effective for the skilled players. If you want the other player to die, switch stances and use a long wiggle; it can do a heavy amount of damage. The idea with staff and dual is currently to "shave" damage as opposed to being a tank.
+			With lower damage, staff and dual should still be effective for the skilled players. If you want the other player to die, switch stances and use a long wiggle; it can do a heavy amount of damage. The idea with staff and dual is currently to "shave" damage as opposed to being a tank. Switch to medium and extend with yellow if you want the opponent to just die.
 			
 			*/
 			else if (self->client->ps.fd.saberAnimLevel == SS_STAFF)
