@@ -476,7 +476,6 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_duelHealthRestore, "g_duelHealthRestore", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_duelShieldRestoreLevel, "g_duelShieldRestoreLevel", "25", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_singleSaberOnly, "g_singleSaberOnly", "1", CVAR_ARCHIVE, 0, qtrue  },
-	{ &g_solidPrepPhase, "g_solidPrepPhase", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_boostDuelDamage, "g_boostDuelDamage", "1", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_allowEmotes, "g_allowEmotes", "0", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_promodeSabers, "g_promodeSabers", "1", CVAR_CHEAT, 0, qtrue  }

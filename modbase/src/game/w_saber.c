@@ -3197,53 +3197,10 @@ static GAME_INLINE int G_PowerLevelForSaberAnim( gentity_t *ent, int saberNum, q
 			  return FORCE_LEVEL_0; 
 			  //kaldor - going to try to alter these to see what they do. Default 0.
 			}
-/*
-			return FORCE_LEVEL_3; 
-			//kaldor - default 0. Changing for testing. This seems to start "swing" in the preparation phase.*/
-			//kaldor - These are experimental fixes to the saber phases. Trying to make single saber start early, while letting dual/staff remain the same as normal (basejka)		
-	
-	if ( !g_solidPrepPhase.integer == 1 ) {
-	
-		if (SS_DUAL) {
-		return FORCE_LEVEL_0;
-		 break;
-		 }
 
-		else if (SS_STAFF) {
-		return FORCE_LEVEL_0;
-		 break;
-		 } 
+			return FORCE_LEVEL_3; 
+			//kaldor - default 0. Changing for testing.
 			
-		else if (SS_STRONG) {
-		return FORCE_LEVEL_3; 
-		break;
-		}
-			
-		else if (SS_MEDIUM) {
-		return FORCE_LEVEL_3;
-		 break;
-		 } 
-		
-      		  else if (SS_FAST) {
-      		  return FORCE_LEVEL_0; 
-      		  break;
-      		  }
-        
-      		  else {
-      		  
-      		  return FORCE_LEVEL_3;
-      		   break;
-      		   
-      		   }
-      		  
-      		  }
-      		  
-      	else if ( !g_solidPrepPhase.integer == 0 ) {
-      		  
-      		  return FORCE_LEVEL_0;
-      		  break;
-      		  }
-        //end experimental fix
         
 		case BOTH_A7_SOULCAL:
 			if ( animTimer < 650 )
