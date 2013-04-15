@@ -4316,17 +4316,17 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 			return qtrue;//true cause even though we didn't get a hit, we don't want to do those extra traces because the debounce time says not to.
 		}
 		trMask &= ~CONTENTS_LIGHTSABER;
-		if ( d_saberSPStyleDamage.integer ) //kaldor - maybe this is for SP (typical basejka) style damage.
+		if ( d_saberSPStyleDamage.integer ) //kaldor 
 		{
 			if ( BG_SaberInReturn( self->client->ps.saberMove ) )
 			{
-				dmg = SABER_NONATTACK_DAMAGE;
+				dmg = 0; //default saber_nonattack_damage
 			}
 			else
 			{
 				if (d_saberSPStyleDamage.integer == 2)
 				{
-					dmg = SABER_NONATTACK_DAMAGE;
+					dmg = 0; //default saber_nonattack_damage
 				}
 				else
 				{
@@ -4338,7 +4338,7 @@ static GAME_INLINE qboolean CheckSaberDamage(gentity_t *self, int rSaberNum, int
 		}
 		else
 		{
-			dmg = SABER_NONATTACK_DAMAGE;
+			dmg = 0; //default saber_nonattack_damage
 		}
 		idleDamage = qtrue; //kaldor - hopefully changing to false will remove the fuckfest of parries on MP.
 	}
