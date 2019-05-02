@@ -2260,7 +2260,7 @@ char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 //	char		*areabits;
 	gclient_t	*client;
 	char		userinfo[MAX_INFO_STRING], sUserinfo[MAX_INFO_STRING];
-	gentity_t	*ent, *sEnt; //setementor q3fill
+	gentity_t	*ent;
 	gentity_t	*te;
 	int			i, sameIPs; //setementor q3fill
 
@@ -2275,23 +2275,35 @@ char *ClientConnect( int clientNum, qboolean firstTime, qboolean isBot ) {
 	}
 
 	//setementor q3fill fix - check there's no more than three of the same IP
-	if ( firstTime )
+	if ( firstTime && !isBot )
 	{
+		char *clientIP = NULL;
+		gclient_t *otherClient = NULL;
 		for ( i = 0, sameIPs = 0; i < level.maxclients; i++ )
 		{
-			sEnt = &g_entities[level.sortedClients[i]];
+			otherClient = &level.clients[i];
 
-			if ( sEnt && sEnt->client && sEnt->client->pers.connected == CON_CONNECTED )
-			{ // is a valid and connected client
-				trap_GetUserinfo(sEnt->client->ps.clientNum, sUserinfo, sizeof(sUserinfo));
-				if (*value && *value == *Info_ValueForKey(sUserinfo, "ip"))
-				{ // IPs are the same
-					sameIPs++;
-				}
+			if (!otherClient)
+				continue;
+
+			if (otherClient->pers.connected == CON_DISCONNECTED) // is not a valid or connected client
+				continue;
+
+			if (otherClient->NPC_class != CLASS_NONE)
+				continue;
+
+			if (otherClient->ps.clientNum < 0 || otherClient->ps.clientNum > MAX_CLIENTS)
+				continue;
+
+			trap_GetUserinfo(otherClient->ps.clientNum, sUserinfo, sizeof(sUserinfo));
+			clientIP = Info_ValueForKey(sUserinfo, "ip");
+			if (*clientIP && !Q_stricmp(value, clientIP))
+			{ // IPs are the same
+				sameIPs++;
 			}
 		}
 
-		if (sameIPs > 10) //kaldor - change to 10 because whatever
+		if (sameIPs > 5)
 		{
 			return "Too many clients from this IP.";
 		}
